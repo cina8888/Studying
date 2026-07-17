@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+</head>
+<body>
+    <script>
+        function minMax(nums) {
+            if (nums.length === 0) {
+                return {min: null, max: null};
+            }
+            let result = {min: nums[0], max: nums[0]};
+            for (let i = 1; i <nums.length; i++) {
+                result.min = nums[i] < result.min ? nums[i] : result.min;
+                result.max = nums[i] > result.max ? nums[i] : result.max;
+            }
+            return result;
+        }
+        console.log(minMax([1, -3, 5]));
+    </script>
+</body>
+</html>
