@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+</head>
+<body>
+    <p>Todo List</p>
+
+    <input
+        placeholder="Todo Name"
+        class="js-name-input"
+        onkeydown="
+            if (event.key === 'Enter') {
+                addTodo();
+            }
+        "
+    >
+
+    <button onclick="addTodo()">Add</button>
+
+    <div class="js-todo-list"></div>
+
+    <script>
+        let list_todo = JSON.parse(localStorage.getItem('list')) || [];
+
+        listing();
+
+        function addTodo() {
+            const inputElement = document.querySelector('.js-name-input');
+            const todo = inputElement.value.trim();
+
+            if (todo === '') {
+                return;
+            }
+
+            list_todo.push(todo);
+
+            localStorage.setItem('list', JSON.stringify(list_todo));
+
+            inputElement.value = '';
+
+            listing();
+        }
+
+        function listing() {
+            let html = '';
+
+            for (const todo of list_todo) {
+                html += `<p>${todo}</p>`;
+            }
+
+            document.querySelector('.js-todo-list').innerHTML = html;
+        }
+    </script>
+</body>
+</html>
