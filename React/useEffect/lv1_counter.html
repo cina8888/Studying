@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <title>Counter</title>
+</head>
+<body>
+    <div class="js-component"></div>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function Counter() {
+            const [count, setCount] = React.useState(0);
+
+            React.useEffect(() => {
+                console.log('Component render');
+            });
+            
+            function handleCount() {
+                setCount(count+1);    
+            };
+
+            return(
+                <div>
+                    <p>{count}</p>
+                    <button onClick={handleCount}>CLick me</button>
+                </div>    
+            );
+        };
+
+        function App() {
+            return(
+                <>
+                    <Counter/>
+                </>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.querySelector('.js-component'));
+        root.render(<App/>);
+    </script>
+</body>
+</html>

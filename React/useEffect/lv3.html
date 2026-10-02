@@ -1,0 +1,53 @@
+    <!DOCTYPE html>
+    <html lang='en'>
+    <head>
+        <title>Change Me</title>
+    </head>
+    <body>
+        <div class="js-component"></div>
+        <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+        <script src="https://unpkg.com/supersimpledev/react.js"></script>
+        <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+        <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+        <script type="text/babel">
+            function Counting() {
+                const [start, setStart] = React.useState(false);
+                const [count, setCount] = React.useState(0);
+                React.useEffect(() => {
+                    if (start) {
+                        const intervalId = setInterval(() => {
+                            setCount(precount => precount+1);
+                            console.log('tick');
+                        }, 1000);
+
+                        return(() => {
+                            clearInterval(intervalId);
+                        });
+                    }
+                    
+                }, [start]);
+
+                return (
+                    <div>
+                        <p>Second: {count}</p>
+                        <button onClick={() => {setStart(true)}}>Start</button>
+                        <button onClick={() => {setStart(false)}}>Stop</button>
+                    </div>
+                );
+            };
+
+            function App() {
+                return(
+                    <>
+                        <Counting/>
+                    </>
+                );
+            };
+
+            const root = ReactDOM.createRoot(document.querySelector('.js-component'));
+            root.render(<App/>);
+        </script>
+    </body>
+    </html>
