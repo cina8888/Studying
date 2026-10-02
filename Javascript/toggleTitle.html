@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+</head>
+<body>
+    <button onclick="addMessage()">Add</button>
+    <button onclick="removeMessage()">Remove</button>
+    <script>
+        let message = 0;
+        let timeoutID;
+        function addMessage() {
+            message++;
+        }
+        function removeMessage() {
+            if ((message - 1) < 0) {
+                return console.log('Message is 0!!!');
+            } else {
+                message--;
+            }
+        }
+
+        setInterval(function() {
+            if (message > 0) {
+                if (document.title === 'Page Title') {
+                    document.title = `(${message}) message`;
+                } else {
+                    document.title = 'Page Title';
+                }
+            } else {
+                document.title = 'Page Title';
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

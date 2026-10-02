@@ -1,0 +1,15 @@
+
+.todo-row {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.menu-choice {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    margin-bottom: 20px;
+    gap: 20px;
+}
