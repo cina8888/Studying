@@ -2,7 +2,6 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 public class WordCounting {
     public static void main(String[] args) {
         try {
@@ -11,8 +10,8 @@ public class WordCounting {
             String currWord;
             System.out.println("Opening file words.txt in folder resources");
             Scanner readin = new Scanner(fileF);
-            while (readin.hasNextLine()) {
-                currWord = readin.nextLine();
+            while (readin.hasNext()) {
+                currWord = readin.next();
                 if (arrWord.containsKey(currWord)) {
                     arrWord.put(currWord, arrWord.get(currWord) + 1);
                 } else {
@@ -20,9 +19,9 @@ public class WordCounting {
                 }
             }
             readin.close();
-            for (Map.Entry<String, Integer> entry : arrWord.entrySet()) {
-                System.out.println("The word: " + entry.getKey() + " appear " + entry.getValue() + " times");
-            }
+            arrWord.forEach((key , value) -> {
+                System.out.println(key + " : " + value);
+            });
         } catch (IOException e) {
             System.out.println("File not found! or Can not open!");
             e.printStackTrace();
