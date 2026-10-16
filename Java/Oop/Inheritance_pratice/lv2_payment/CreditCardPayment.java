@@ -1,4 +1,4 @@
-package Inheritance.lv2_payment;
+package Oop.Inheritance_pratice.lv2_payment;
 
 public class CreditCardPayment extends PaymentTransaction implements Refundable {
     private String cardHolderName;

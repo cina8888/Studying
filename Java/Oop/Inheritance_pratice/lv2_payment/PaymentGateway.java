@@ -1,4 +1,4 @@
-package Inheritance.lv2_payment;
+package Oop.Inheritance_pratice.lv2_payment;
 import java.util.List;
 import java.util.ArrayList;
 

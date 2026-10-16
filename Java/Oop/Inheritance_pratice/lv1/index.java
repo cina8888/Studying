@@ -1,4 +1,4 @@
-package Inheritance.lv1;
+package Oop.Inheritance_pratice.lv1;
 
 public class index {
     public static void main(String[] args) {

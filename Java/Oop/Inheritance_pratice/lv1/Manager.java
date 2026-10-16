@@ -1,4 +1,4 @@
-package Inheritance.lv1;
+package Oop.Inheritance_pratice.lv1;
 
 public class Manager extends Employee {
     double allowance;
