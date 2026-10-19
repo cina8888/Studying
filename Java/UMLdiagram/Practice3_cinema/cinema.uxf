@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>21</x>
+      <y>455</y>
+      <w>273</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Movie
+--
+-nameMovie: String
+-durationMin: int
+-minAge: int
+--
++Movie(nameMovie: String, durationMin: int, minAge: int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>427</x>
+      <y>462</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Room
+--
+-seatMap&lt;String, Seat&gt;
+-nameRoom: String
+--
++Room(nameRoom: String)
++printSeatMap(): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>371</x>
+      <y>651</y>
+      <w>224</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>StandardSeat
+--
++StandardSeat(SeatID: String, SeatState: boolean)
++priceCal(): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>329</y>
+      <w>252</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Interface&gt;&gt;
+Seat
+--
++priceCal(): double
++isBooked(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>644</x>
+      <y>434</y>
+      <w>238</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Abstract&gt;&gt;
+AbstractSeat
+--
+-SeatID: String
+-SeatState: boolean
+-TICKET_PRICE=80.000: double
+--
++AbstractSeat(seatID: String, seatState: boolean)
++isBooked(): boolean
++toString(): String
++getTicketPrice(): double
++setSeatState(booked: boolean): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>616</x>
+      <y>644</y>
+      <w>224</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>VIPSeat
+--
+-VIP_SURCHARGE_RATE = 0.2: double
+-gift: String
+--
++VIPSeat(SeatID: String, SeatState: boolean)
++priceCal(): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>875</x>
+      <y>651</y>
+      <w>224</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>CoupleSeat
+--
++CoupleSeat(SeatID: String, SeatState: boolean)
++priceCal(): double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>329</x>
+      <y>119</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>User
+--
+-name: String
+-email: String
+-role: String
+--
++User(name: String, email: String, role: String);
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>217</x>
+      <y>301</y>
+      <w>175</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Admin
+--
++Admin(name: String, email: String);
++newMovie(movie Movie): void
++newRoom(room Room): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>413</x>
+      <y>294</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Customer
+--
+-points: double
+
+--
++bookSeat(seat: Seat): boolean
++historyTrans(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>350</x>
+      <y>182</y>
+      <w>21</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>182</y>
+      <w>21</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>553</y>
+      <w>154</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>763</x>
+      <y>553</y>
+      <w>21</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>840</x>
+      <y>553</y>
+      <w>140</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;30.0;180.0;30.0;180.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>749</x>
+      <y>378</y>
+      <w>21</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>252</x>
+      <y>350</y>
+      <w>77</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+create Movie</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>343</x>
+      <y>350</y>
+      <w>168</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+create Room</panel_attributes>
+    <additional_attributes>200.0;160.0;200.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>546</x>
+      <y>350</y>
+      <w>98</w>
+      <h>161</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;
+m1=0..n
+seatMap
+m2=1</panel_attributes>
+    <additional_attributes>120.0;10.0;70.0;10.0;70.0;200.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>511</x>
+      <y>357</y>
+      <w>77</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1
+Booking Seat</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>98</x>
+      <y>112</y>
+      <w>147</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Cinema
+--
++Cinema()
++addUser(user: User)
++removeUser(user: User)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>238</x>
+      <y>154</y>
+      <w>105</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>658</x>
+      <y>203</y>
+      <w>147</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>Transaction
+--
+-transactionId: String
+-booking time: String
+-List&lt;Movie&gt;
+-List&lt;Seat&gt;
+--
++totalPrice(): double
++toString(): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>553</x>
+      <y>238</y>
+      <w>119</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>150.0;10.0;60.0;10.0;60.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+</diagram>
