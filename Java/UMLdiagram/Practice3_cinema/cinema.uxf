@@ -5,7 +5,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>21</x>
-      <y>455</y>
+      <y>427</y>
       <w>273</w>
       <h>77</h>
     </coordinates>
@@ -23,13 +23,13 @@
     <id>UMLClass</id>
     <coordinates>
       <x>427</x>
-      <y>462</y>
-      <w>126</w>
+      <y>434</y>
+      <w>140</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Room
 --
--seatMap&lt;String, Seat&gt;
+-seatMap: Map&lt;String, Seat&gt;
 -nameRoom: String
 --
 +Room(nameRoom: String)
@@ -41,28 +41,28 @@
     <id>UMLClass</id>
     <coordinates>
       <x>371</x>
-      <y>651</y>
+      <y>665</y>
       <w>224</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>StandardSeat
 --
 +StandardSeat(SeatID: String, SeatState: boolean)
-+priceCal(): double</panel_attributes>
++calculatePrice(): double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>630</x>
-      <y>329</y>
+      <y>301</y>
       <w>252</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Interface&gt;&gt;
 Seat
 --
-+priceCal(): double
++calculatePrice(): double
 +isBooked(): boolean</panel_attributes>
     <additional_attributes/>
   </element>
@@ -70,7 +70,7 @@ Seat
     <id>UMLClass</id>
     <coordinates>
       <x>644</x>
-      <y>434</y>
+      <y>406</y>
       <w>238</w>
       <h>126</h>
     </coordinates>
@@ -92,7 +92,7 @@ AbstractSeat
     <id>UMLClass</id>
     <coordinates>
       <x>616</x>
-      <y>644</y>
+      <y>616</y>
       <w>224</w>
       <h>70</h>
     </coordinates>
@@ -102,28 +102,28 @@ AbstractSeat
 -gift: String
 --
 +VIPSeat(SeatID: String, SeatState: boolean)
-+priceCal(): double</panel_attributes>
++calculatePrice(): double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>875</x>
-      <y>651</y>
+      <y>623</y>
       <w>224</w>
       <h>49</h>
     </coordinates>
     <panel_attributes>CoupleSeat
 --
 +CoupleSeat(SeatID: String, SeatState: boolean)
-+priceCal(): double</panel_attributes>
++calculatePrice(): double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>329</x>
-      <y>119</y>
+      <y>91</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -133,23 +133,23 @@ AbstractSeat
 -email: String
 -role: String
 --
-+User(name: String, email: String, role: String);
++User(name: String, email: String);
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>217</x>
-      <y>301</y>
-      <w>175</w>
+      <x>182</x>
+      <y>273</y>
+      <w>224</w>
       <h>56</h>
     </coordinates>
     <panel_attributes>Admin
 --
-+Admin(name: String, email: String);
-+newMovie(movie Movie): void
-+newRoom(room Room): void
++Admin(name: String, email: String)
++newMovie(cinema Cinema, movie Movie): void
++newRoom(cinema Cinema, room Room): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -157,8 +157,8 @@ AbstractSeat
     <id>UMLClass</id>
     <coordinates>
       <x>413</x>
-      <y>294</y>
-      <w>147</w>
+      <y>224</y>
+      <w>252</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Customer
@@ -166,7 +166,7 @@ AbstractSeat
 -points: double
 
 --
-+bookSeat(seat: Seat): boolean
++bookSeat(showTime: ShowTime, seat: Seat): boolean
 +historyTrans(): void</panel_attributes>
     <additional_attributes/>
   </element>
@@ -174,7 +174,7 @@ AbstractSeat
     <id>Relation</id>
     <coordinates>
       <x>350</x>
-      <y>182</y>
+      <y>154</y>
       <w>21</w>
       <h>133</h>
     </coordinates>
@@ -185,29 +185,29 @@ AbstractSeat
     <id>Relation</id>
     <coordinates>
       <x>462</x>
-      <y>182</y>
+      <y>154</y>
       <w>21</w>
-      <h>126</h>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>560</x>
-      <y>553</y>
+      <y>525</y>
       <w>154</w>
-      <h>112</h>
+      <h>154</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;140.0</additional_attributes>
+    <additional_attributes>200.0;10.0;200.0;40.0;10.0;40.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>763</x>
-      <y>553</y>
+      <y>525</y>
       <w>21</w>
       <h>105</h>
     </coordinates>
@@ -218,7 +218,7 @@ AbstractSeat
     <id>Relation</id>
     <coordinates>
       <x>840</x>
-      <y>553</y>
+      <y>525</y>
       <w>140</w>
       <h>112</h>
     </coordinates>
@@ -229,7 +229,7 @@ AbstractSeat
     <id>Relation</id>
     <coordinates>
       <x>749</x>
-      <y>378</y>
+      <y>350</y>
       <w>21</w>
       <h>70</h>
     </coordinates>
@@ -240,11 +240,11 @@ AbstractSeat
     <id>Relation</id>
     <coordinates>
       <x>252</x>
-      <y>350</y>
+      <y>322</y>
       <w>77</w>
       <h>119</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;.
 m1=0..n
 create Movie</panel_attributes>
     <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
@@ -253,11 +253,11 @@ create Movie</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>343</x>
-      <y>350</y>
+      <y>322</y>
       <w>168</w>
       <h>126</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-
+    <panel_attributes>lt=&lt;.
 m1=0..n
 create Room</panel_attributes>
     <additional_attributes>200.0;160.0;200.0;90.0;10.0;90.0;10.0;10.0</additional_attributes>
@@ -265,44 +265,34 @@ create Room</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>546</x>
-      <y>350</y>
-      <w>98</w>
+      <x>560</x>
+      <y>322</y>
+      <w>84</w>
       <h>161</h>
     </coordinates>
     <panel_attributes>lt=-&gt;&gt;&gt;&gt;&gt;
-m1=0..n
+m1=1..n
 seatMap
 m2=1</panel_attributes>
-    <additional_attributes>120.0;10.0;70.0;10.0;70.0;200.0;10.0;200.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>511</x>
-      <y>357</y>
-      <w>77</w>
-      <h>119</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-
-m1=0..n
-m2=1
-Booking Seat</panel_attributes>
-    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+    <additional_attributes>100.0;10.0;50.0;10.0;50.0;200.0;10.0;200.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>98</x>
-      <y>112</y>
+      <y>84</y>
       <w>147</w>
-      <h>70</h>
+      <h>98</h>
     </coordinates>
     <panel_attributes>Cinema
 --
+-List&lt;User&gt;
+-List&lt;Movie&gt;
+-List&lt;Room&gt;
+--
 +Cinema()
-+addUser(user: User)
-+removeUser(user: User)
++addUser(user: User): void
++removeUser(user: User): void
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -310,7 +300,7 @@ Booking Seat</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>238</x>
-      <y>154</y>
+      <y>126</y>
       <w>105</w>
       <h>28</h>
     </coordinates>
@@ -322,33 +312,112 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>658</x>
-      <y>203</y>
+      <x>784</x>
+      <y>119</y>
       <w>147</w>
       <h>98</h>
     </coordinates>
     <panel_attributes>Transaction
 --
 -transactionId: String
--booking time: String
--List&lt;Movie&gt;
+-bookingTime: LocalDateTime
+-customer: Customer
+-showTime: ShowTime  
 -List&lt;Seat&gt;
 --
-+totalPrice(): double
-+toString(): String</panel_attributes>
++totalPrice(): double</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>553</x>
-      <y>238</y>
-      <w>119</w>
+      <x>140</x>
+      <y>175</y>
+      <w>35</w>
+      <h>266</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;360.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>238</x>
+      <y>588</y>
+      <w>147</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>ShowTime
+--
+-startTime: LocalDateTime
+-endTime: LocalDateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>259</x>
+      <y>497</y>
+      <w>35</w>
       <h>105</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 m1=0..n
 m2=1</panel_attributes>
-    <additional_attributes>150.0;10.0;60.0;10.0;60.0;120.0;10.0;120.0</additional_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>497</y>
+      <w>84</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;180.0;90.0;180.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>658</x>
+      <y>154</y>
+      <w>140</w>
+      <h>119</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=0..n
+m2=1</panel_attributes>
+    <additional_attributes>180.0;10.0;80.0;10.0;80.0;140.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>833</x>
+      <y>210</y>
+      <w>35</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+m1=1..n
+m2=1</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>0</x>
+      <y>14</y>
+      <w>826</w>
+      <h>623</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>1150.0;150.0;1150.0;10.0;10.0;10.0;10.0;860.0;340.0;860.0</additional_attributes>
   </element>
 </diagram>
