@@ -28,6 +28,8 @@
 	</scm>
 	<properties>
 		<java.version>25</java.version>
+		<mongodb-driver-sync.version>5.8.2</mongodb-driver-sync.version>
+		<mongodb-driver-core.version>5.8.2</mongodb-driver-core.version>
 	</properties>
 	<dependencies>
 		<dependency>
