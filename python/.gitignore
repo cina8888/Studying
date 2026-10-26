@@ -1,0 +1,17 @@
+# Virtual Environments (Môi trường ảo)
+encrypt/
+hashing/
+.venv/
+venv/
+
+# Environment Variables & Secrets (File chứa key thật)
+.env
+.env.local
+*.key
+
+# Python Cache
+__pycache__/
+*.py[cod]
+
+# Data files
+*.hash
