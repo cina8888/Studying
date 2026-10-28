@@ -3,6 +3,7 @@ encrypt/
 hashing/
 .venv/
 venv/
+fakerdata/
 
 # Environment Variables & Secrets (File chứa key thật)
 .env
