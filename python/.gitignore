@@ -4,6 +4,7 @@ hashing/
 .venv/
 venv/
 fakerdata/
+checkPW/
 
 # Environment Variables & Secrets (File chứa key thật)
 .env
