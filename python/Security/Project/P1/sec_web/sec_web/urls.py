@@ -20,5 +20,7 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home),
+    path('api/users', views.get_users, name='get_users'), 
+    path('api/users/', views.get_users, name='get_users_slash'),
+    path('api/users/delete/<int:user_id>', views.delete_user, name='delete_user'),
 ]
