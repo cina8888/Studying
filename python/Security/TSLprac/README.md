@@ -13,7 +13,7 @@ openssl req -x509 -newkey rsa:4096 -nodes -keyout key.pem -out cert.pem -days 36
 pip install django
 ```
 
-4. create alice
+4. create project
 
 ```py
 django-admin startproject alice

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Hệ thống DevSecOps</title>
+</head>
+<body style="text-align: center; margin-top: 50px; font-family: sans-serif;">
+    <h1 style="color: green;">🔒 Kết nối TLS/HTTPS Thành công!</h1>
+    
+    <div style="border: 2px solid #333; padding: 20px; display: inline-block; border-radius: 10px; text-align: left;">
+        <h3>Danh sách User từ MySQL:</h3>
+        <ul>
+            <!-- Vòng lặp in ra từng user -->
+            {% for u in users %}
+                <li>
+                    <strong>{{ u.username }}</strong> 
+                    (Tạo lúc: {{ u.created_at|date:"d/m/Y" }})
+                </li>
+            {% empty %}
+                <p>Chưa có user nào trong database.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
