@@ -5,6 +5,8 @@ hashing/
 venv/
 fakerdata/
 checkPW/
+alice/
+sslpractice
 
 # Environment Variables & Secrets (File chứa key thật)
 .env
@@ -17,3 +19,12 @@ __pycache__/
 
 # Data files
 *.hash
+
+
+# File key
+cert.pem
+key.pem
+
+# File cert
+luquy.crt
+wikipedia.crt
