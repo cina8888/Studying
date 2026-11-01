@@ -1,5 +1,5 @@
 # Phạm vi làm việc
-- Thư mục làm việc: D:\self_study\Git_push\Python\Security\Project\P1
+- Thư mục làm việc: D:\self_study\Git_push\Python\Security\Project\DataAnalyst
 
 # Quy trình bắt đầu phiên
 1. Đọc CLAUDE.md trong thư mục làm việc để hiểu dự án.
