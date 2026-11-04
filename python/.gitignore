@@ -8,6 +8,9 @@ checkPW/
 alice/
 sslpractice
 
+# Folder
+data/
+
 # Environment Variables & Secrets (File chứa key thật)
 .env
 .env.local
@@ -28,3 +31,6 @@ key.pem
 # File cert
 luquy.crt
 wikipedia.crt
+
+# Claude
+CLAUDE.md
